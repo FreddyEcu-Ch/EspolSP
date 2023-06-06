@@ -106,3 +106,27 @@ saturacion_tri = triang.rvs(c=0.3, loc=0, scale=1.0, size=1000)
 
 # Random values with uniform distribution
 saturacion_uni = uniform.rvs(loc=0, scale=1.0, size=1000)
+
+
+#Values from h
+h_norm = norm.rvs(loc=50, scale=0.05, size=1000)
+# State mim limit
+h_norm = np.where(h_norm < 0, 0, h_norm)
+# State max limit
+h_norm = np.where(h_norm > 50, 50, h_norm)
+
+# Random values with lognormal distribution
+h_log = lognorm.rvs(s=0.1, loc=0, scale=0.05, size=1000)
+h_log = np.where(h_log < 0, 0, h_log)
+h_log = np.where(h_log > 50, 50, h_log)
+
+# Random value with exponential distribution
+h_expon = expon.rvs(loc=0, scale=0.05, size=1000)
+h_expon = np.where(h_expon < 0, 0, h_expon)
+h_expon = np.where(h_expon > 50, 50, h_expon)
+
+# Random values with triangular distribution
+h_tri = triang.rvs(c=27, loc=0, scale=50, size=1000)
+
+# Random values with uniform distribution
+h_uni = uniform.rvs(loc=0, scale=50, size=1000)
