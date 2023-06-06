@@ -53,6 +53,30 @@ porosity_tri = triang.rvs(c=0.3, loc=0, scale=0.4, size=1000)
 # Random values with uniform distribution
 porosity_uni = uniform.rvs(loc=0, scale=0.4, size=1000)
 
+#%% random values for area
+
+area_norm = norm.rvs(loc=0.4, scale=0.05, size=1000)
+# State mim limit
+area_norm = np.where(area_norm < 0, 0, area_norm)
+# State max limit
+area_norm = np.where(area_norm > 500, 500, area_norm)
+
+# Random values with lognormal distribution
+area_log = lognorm.rvs(s=0.1, loc=0, scale=0.05, size=1000)
+area_log = np.where(area_log < 0, 0, area_log)
+area_log = np.where(area_log > 500, 500, area_log)
+
+# Random value with exponential distribution
+area_expon = expon.rvs(loc=0, scale=0.05, size=1000)
+area_expon = np.where(area_expon < 0, 0, area_expon)
+area_expon = np.where(area_expon > 500, 500, area_expon)
+
+# Random values with triangular distribution
+area_tri = triang.rvs(c=320, loc=0, scale=500, size=1000)
+
+# Random values with uniform distribution
+area_uni = uniform.rvs(loc=0, scale=500, size=1000)
+
 #%% Visualize porosity distributions
 plt.hist(porosity_tri)
 plt.show()
