@@ -56,3 +56,29 @@ porosity_uni = uniform.rvs(loc=0, scale=0.4, size=1000)
 #%% Visualize porosity distributions
 plt.hist(porosity_tri)
 plt.show()
+
+
+#%%
+# random values for saturation
+# Random values with normal distribution
+saturacion_norm = norm.rvs(loc=0.4, scale=0.05, size=1000)
+# State mim limit
+saturacion_norm = np.where(saturacion_norm < 0, 0, saturacion_norm)
+# State max limit
+saturacion_norm = np.where(saturacion_norm > 1, 1, saturacion_norm)
+
+# Random values with lognormal distribution
+saturacion_log = lognorm.rvs(s=0.1, loc=0, scale=0.05, size=1000)
+saturacion_log_log = np.where(saturacion_log < 0, 0, saturacion_log)
+saturacion_log = np.where(saturacion_log > 1.0, 1.0, saturacion_log)
+
+# Random value with exponential distribution
+saturacion_expon = expon.rvs(loc=0, scale=0.05, size=1000)
+saturacion_expon = np.where(saturacion_expon < 0, 0, saturacion_expon)
+saturacion_expon = np.where(saturacion_expon > 1.0, 1.0, saturacion_expon)
+
+# Random values with triangular distribution
+saturacion_tri = triang.rvs(c=0.3, loc=0, scale=1.0, size=1000)
+
+# Random values with uniform distribution
+saturacion_uni = uniform.rvs(loc=0, scale=1.0, size=1000)
