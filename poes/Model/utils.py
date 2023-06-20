@@ -100,9 +100,7 @@ def param_stoiip(
             random_state=rng,
         )
         param = np.where(
-            param > df.loc[row, lim_max_col],
-            df.loc[row, lim_max_col],
-            param,
+            param > df.loc[row, lim_max_col], df.loc[row, lim_max_col], param
         )
 
     elif df.loc[row, dist_col] == "Uniform":
