@@ -23,7 +23,7 @@ SC = "Sc"
 LIM_MIN = "Lim min"
 LIM_MAX = "Lim max"
 
-# Values to write from Ms Excel
+# Values to write from MS Excel
 DET_VALUES = "det_values"
 DF_POES = "df_poes"
 REALIZATIONS = "realizations"
