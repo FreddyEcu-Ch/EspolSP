@@ -3,6 +3,7 @@
 import xlwings as xw
 import numpy as np
 import pandas as pd
+from scipy.stats import norm
 
 # %% Create a workbook from Python
 
@@ -29,6 +30,12 @@ sheet["D9"].options(np.array, transpose=True).value = np.array([1, 2, 3, 4, 5])
 
 arrays = sheet["D9:D13"].value
 print(arrays)
+
+#%%
+porosity = norm.rvs(loc=0.4, scale=0.05, size=10000)
+
+sheet["C16"].options(np.array, transpose=True).value = porosity
+
 
 # %% Create a pandas DataFrame from Python to Ms Excel
 
