@@ -24,7 +24,7 @@ def param_stoiip(
     df
         Pandas dataframe
     row
-        row index
+        row inde
     dist_col
         distribution column
     loc_col
